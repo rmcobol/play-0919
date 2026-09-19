@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>운동 기록기</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="main-card">
+        <header class="top-bar">
+          <div class="title-wrap">
+            <p class="eyebrow">Fitness Tracker</p>
+            <h1>운동 기록기</h1>
+          </div>
+          <a href="setting.html" class="settings-btn" aria-label="설정">설정</a>
+        </header>
+
+        <section class="timer-panel" aria-live="polite">
+          <div class="timer-label-row">
+            <span class="timer-label">현재 남은 시간</span>
+            <span class="workout-badge">사이클</span>
+          </div>
+
+          <div class="time-display">
+            <div class="time-block cycle" data-exercise="cycling">
+              <span class="time-value">00:30:00</span>
+            </div>
+            <div class="time-block jogging" data-exercise="jogging">
+              <span class="time-value">00:20:00</span>
+            </div>
+            <div class="time-block marathon" data-exercise="marathon">
+              <span class="time-value">01:30:00</span>
+            </div>
+            <div class="time-block hiking" data-exercise="hiking">
+              <span class="time-value">00:45:00</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="workout-panel">
+          <div class="section-header">
+            <h2>운동 종류</h2>
+          </div>
+
+          <div class="workout-options">
+            <input type="radio" name="exercise" id="cycling" checked onclick="selectExercise('cycling')" />
+            <label for="cycling" class="option-card">
+              <span class="option-name">사이클</span>
+              <span class="option-time">30분</span>
+            </label>
+
+            <input type="radio" name="exercise" id="jogging" onclick="selectExercise('jogging')" />
+            <label for="jogging" class="option-card">
+              <span class="option-name">조깅</span>
+              <span class="option-time">20분</span>
+            </label>
+
+            <input type="radio" name="exercise" id="marathon" onclick="selectExercise('marathon')" />
+            <label for="marathon" class="option-card">
+              <span class="option-name">마라톤</span>
+              <span class="option-time">90분</span>
+            </label>
+
+            <input type="radio" name="exercise" id="hiking" onclick="selectExercise('hiking')" />
+            <label for="hiking" class="option-card">
+              <span class="option-name">등산</span>
+              <span class="option-time">45분</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="action-panel" aria-label="운동 제어">
+          <button class="btn start" type="button" onclick="startTimer()">시작</button>
+          <button class="btn pause" type="button" onclick="pauseTimer()">정지</button>
+          <button class="btn reset" type="button" onclick="resetTimer()">초기화</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

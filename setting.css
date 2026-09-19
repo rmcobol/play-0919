@@ -1,0 +1,78 @@
+:root {
+  --bg-dark: #0f172a;
+  --bg-mid: #111827;
+  --card: rgba(15, 23, 42, 0.9);
+  --panel: rgba(15, 118, 110, 0.16);
+  --primary: #6ee7b7;
+  --primary-strong: #34d399;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.setting-wrap {
+  width: min(100%, 480px);
+  padding: 24px;
+}
+
+.setting-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.45);
+  padding: 28px 22px;
+}
+
+h3 {
+  margin: 0 0 24px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.setting-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+label {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.7);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.complete-btn {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 16px;
+  cursor: pointer;
+}

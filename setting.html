@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting</title>
+    <link rel="stylesheet" href="setting.css" />
+  </head>
+  <body>
+    <main class="setting-wrap">
+      <section class="setting-card">
+        <h3>Setting</h3>
+
+        <div class="setting-row">
+          <label for="timer-setting">타이머 시간 설정</label>
+          <input id="timer-setting" type="number" min="1" max="120" value="30" />
+        </div>
+
+        <button class="complete-btn" type="button" onclick="saveTimerSetting()">설정 완료</button>
+      </section>
+    </main>
+
+    <script src="setting.js"></script>
+  </body>
+</html>
