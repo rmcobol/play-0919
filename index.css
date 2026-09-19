@@ -1,16 +1,19 @@
 :root {
-  --bg-dark: #0f172a;
-  --bg-mid: #111827;
-  --card: rgba(15, 23, 42, 0.86);
-  --card-soft: rgba(30, 41, 59, 0.9);
-  --panel: rgba(15, 118, 110, 0.18);
-  --primary: #6ee7b7;
-  --primary-strong: #34d399;
-  --accent: #a78bfa;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --border: rgba(148, 163, 184, 0.2);
-  --shadow: 0 24px 60px rgba(15, 23, 42, 0.4);
+  --sky-blue: #87CEEB;
+  --sky-blue-deep: #6bb8df;
+  --bg-dark: #7ec5e6;
+  --bg-mid: #bfeafc;
+  --card: rgba(255, 255, 255, 0.28);
+  --card-soft: rgba(255, 255, 255, 0.34);
+  --panel: rgba(255, 255, 255, 0.15);
+  --primary: #ff6347;
+  --primary-strong: #ff7f50;
+  --accent: #ffd700;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.8);
+  --border: rgba(255, 255, 255, 0.38);
+  --shadow: 0 20px 40px rgba(81, 123, 170, 0.23);
+  --clay-shadow: 0 8px 0 rgba(119, 82, 68, 0.18);
 }
 
 * {
@@ -23,9 +26,8 @@ body {
   display: grid;
   place-items: center;
   background:
-    radial-gradient(circle at top, rgba(52, 211, 153, 0.15), transparent 30%),
-    linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
-  font-family: "Segoe UI", Tahoma, sans-serif;
+    linear-gradient(180deg, var(--sky-blue) 0%, #bfeafc 100%);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI", sans-serif;
   color: var(--text);
 }
 
@@ -41,12 +43,12 @@ input {
 
 .main-card {
   position: relative;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 30px;
   padding: 28px 24px 22px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow), var(--clay-shadow);
+  backdrop-filter: blur(8px);
 }
 
 .top-bar {
@@ -62,26 +64,30 @@ input {
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: #fff7d6;
+  font-weight: 700;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-shadow: 0 4px 0 rgba(255, 126, 80, 0.35);
 }
 
 .settings-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border);
-  background: rgba(148, 163, 184, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.18));
   color: var(--text);
   text-decoration: none;
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
+  box-shadow: 0 6px 0 rgba(109, 113, 141, 0.15);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
@@ -92,10 +98,11 @@ h1 {
 }
 
 .timer-panel {
-  background: linear-gradient(180deg, rgba(16, 185, 129, 0.12), rgba(59, 130, 246, 0.08));
-  border: 1px solid rgba(110, 231, 183, 0.25);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+  border: 2px solid rgba(255, 255, 255, 0.28);
   border-radius: 24px;
   padding: 18px 18px 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .timer-label-row {
@@ -106,18 +113,19 @@ h1 {
 }
 
 .timer-label {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.92rem;
 }
 
 .workout-badge {
-  padding: 6px 10px;
+  padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(110, 231, 183, 0.12);
-  border: 1px solid rgba(110, 231, 183, 0.2);
-  color: var(--primary);
+  background: rgba(255, 214, 102, 0.26);
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  color: #fff6d0;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2);
 }
 
 .time-display {
@@ -131,15 +139,17 @@ h1 {
   justify-content: center;
   min-height: 112px;
   text-align: center;
-  background: rgba(15, 23, 42, 0.42);
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.22);
   border-radius: 18px;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.16);
 }
 
 .time-value {
   font-size: clamp(2.2rem, 6vw, 3rem);
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.08em;
+  text-shadow: 0 3px 0 rgba(120, 92, 52, 0.15);
 }
 
 .workout-panel {
@@ -170,28 +180,29 @@ h1 {
   gap: 5px;
   min-height: 88px;
   padding: 16px 14px;
-  background: var(--card-soft);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.26);
   border-radius: 16px;
   color: var(--text);
   cursor: pointer;
+  box-shadow: 0 5px 0 rgba(120, 92, 52, 0.12);
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .option-name {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .option-time {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.88rem;
 }
 
 .workout-options input:checked + .option-card {
-  background: rgba(110, 231, 183, 0.12);
-  border-color: rgba(110, 231, 183, 0.6);
-  box-shadow: inset 0 0 0 1px rgba(110, 231, 183, 0.35);
+  background: rgba(255, 99, 71, 0.18);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 5px 0 rgba(255, 99, 71, 0.12);
 }
 
 .action-panel {
@@ -205,10 +216,11 @@ h1 {
   border: none;
   border-radius: 14px;
   padding: 14px 12px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  color: #0f172a;
+  color: #ffffff;
   transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 6px 0 rgba(120, 92, 52, 0.12);
 }
 
 .btn.start {
@@ -216,11 +228,11 @@ h1 {
 }
 
 .btn.pause {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  background: linear-gradient(135deg, #ffc857, #f8b500);
 }
 
 .btn.reset {
-  background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+  background: linear-gradient(135deg, #8ecae6, #5fa8d3);
 }
 
 body:has(#cycling:checked) .time-block.cycle,
